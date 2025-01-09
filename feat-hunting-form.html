@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feat Hunting Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-4">Feat Hunting request</h1>
+        <form id="featHuntingForm">
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Your Name:</span>
+                </label>
+                <input type="text" name="playerName" placeholder="Your Name" class="input input-bordered" required />
+            </div>
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Your Timezone (e.g., EST, PST):</span>
+                </label>
+                <input type="text" name="playerTimezone" placeholder="Your Timezone" class="input input-bordered" required />
+            </div>
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">DLC Number or Name:</span>
+                </label>
+                <input type="text" name="dlc" placeholder="DLC Number or Name" class="input input-bordered" required />
+            </div>
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Feat Name:</span>
+                </label>
+                <input type="text" name="featName" placeholder="Feat Name" class="input input-bordered" required />
+            </div>
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Feat Type:</span>
+                </label>
+                <select name="featType" class="select select-bordered" required>
+                    <option value="openWorld">Open World</option>
+                    <option value="duo">Duo</option>
+                    <option value="alert">Alert</option>
+                    <option value="raid">Raid</option>
+                </select>
+            </div>
+            <div class="form-control mt-6">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+
+        <script>
+            const form = document.getElementById('featHuntingForm');
+            const discordWebhookUrl = 'https://discord.com/api/webhooks/1066803633900222514/4q8M3x_i8h6f-P7T559M-h1wW2x4X-aW1c3kY1-b_O8a9k8-F8gC6pK'; // Replace with your Discord webhook URL
+
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault(); 
+                const formData = new FormData(form);
+                const data = {};
+                formData.forEach((value, key) => {
+                    data[key] = value;
+                });
+            
+                try {
+                    const response = await fetch(discordWebhookUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    });
+                    if (response.ok) {
+                        alert('Feat hunting request submitted successfully!');
+                        form.reset();
+                    } else {
+                        alert('Error submitting feat hunting request.');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Error submitting feat hunting request.');
+                }
+
+
+            });
+        </script>
+    </div>
+</body>
+</html>
