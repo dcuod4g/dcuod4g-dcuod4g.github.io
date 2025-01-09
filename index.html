@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D4G</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header class="bg-gradient-to-r from-cyan-500 to-blue-500">
+        <nav class="container mx-auto p-4">
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <a class="btn btn-ghost normal-case text-xl" href="#">Destined 4 Greatness</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1">
+                        <li><a href="./feat-hunting-form.html">Feat Hunting</a></li>
+                        <li><a href="./report-form.html">Report</a></li>
+                        <li><a href="">Roles</a></li>
+                        <li><a href="">Artifact</a></li>
+                        <li><a href="">Agument</a></li>
+                        <li><a href="">Feat</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <button class="btn btn-primary" onclick="window.location.href='./join-now.html'">Join Us</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container mx-auto p-4">
+        <section class="hero">
+            <div class="hero-content flex-col lg:flex-row-reverse">
+                <img src="./photos/dcuo.jpg" class="max-w-sm rounded-lg shadow-2xl" alt="League Image" />
+                <div>
+                    <h1 class="text-5xl font-bold">Welcome to Our League!</h1>
+                    <p class="py-6">Discover the thrill of competitive gaming and make new friends in our vibrant gaming community.</p>
+                    <button class="btn btn-primary" onclick="scrollToRules()">RULES</button> 
+                </div>
+            </div>
+        </section>
+        <section class="leaders mt-8">
+            <h2 class="text-3xl font-bold mb-4">Meet Our Leaders</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="leader-card">
+                    <img src="./photos/hex.jpg" class="w-full h-64 object-cover rounded-lg shadow-2xl" alt="Leader 1" />
+                    <div class="info-box p-4 bg-base-100 rounded-lg shadow-2xl">
+                        <h3 class="text-xl font-bold">MrsHex</h3>
+                        <p class="text-lg">Leader</p>
+                    </div>
+                </div>
+                <div class="leader-card">
+                    <img src="./photos/2020.jpg" class="w-full h-64 object-cover rounded-lg shadow-2xl" alt="Leader 2" />
+                    <div class="info-box p-4 bg-base-100 rounded-lg shadow-2xl">
+                        <h3 class="text-xl font-bold">Batman2020</h3>
+                        <p class="text-lg">Co-Founder</p>
+                    </div>
+                </div>
+                <div class="leader-card">
+                    <img src="./photos/whispers.jpg" class="w-full h-64 object-cover rounded-lg shadow-2xl" alt="Leader 3" />
+                    <div class="info-box p-4 bg-base-100 rounded-lg shadow-2xl">
+                        <h3 class="text-xl font-bold">Whisperz</h3>
+                        <p class="text-lg">Co-Leader</p>
+                    </div>
+                </div>
+                <div class="leader-card">
+                    <img src="./photos/tim.png" class="w-full h-64 object-cover rounded-lg shadow-2xl" alt="Leader 4" />
+                    <div class="info-box p-4 bg-base-100 rounded-lg shadow-2xl">
+                        <h3 class="text-xl font-bold">xXObsidian DanteXx</h3>
+                        <p class="text-lg">Co-Leader</p>
+                    </div>
+                </div>
+                <div class="leader-card">
+                    <img src="./photos/arzek.jpg" class="w-full h-64 object-cover rounded-lg shadow-2xl" alt="Leader 5" />
+                    <div class="info-box p-4 bg-base-100 rounded-lg shadow-2xl">
+                        <h3 class="text-xl font-bold">Arzek</h3>
+                        <p class="text-lg">Co-Leader</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4 mt-8">
+                <div class="info-box p-4 bg-base-100 rounded-lg shadow-2xl w-1/2">
+                    <h2 class="text-3xl font-bold mb-4">MOTD</h2>
+                    <p class="text-lg">HAPPY HOLODAYS HAVE FUN</p>
+                    <p class="text-lg">Everyone uses the buffs / so please do 10k a month in prestige.</p>
+                    <p class="text-lg">We do have memebrs willing to help with feats</p>
+                    <p class="text-lg">Please mail MrsHex all toon the toon you have in the leage.</p>
+                </div>
+                <div class="info-box p-4 bg-base-100 rounded-lg shadow-2xl w-1/2" id="rules"> 
+                    <h2 class="text-3xl font-bold mb-4">Rules</h2>
+                    <p class="text-lg">To join our league, you must meet the following requirements:</p>
+                    <ul class="text-lg">
+                        <li>Be at least 18 years old</li>
+                        <li>Have a strong internet connection</li>
+                        <li>Have a gaming PC or console that meets our minimum system requirements</li>
+                        <li>Be willing to commit to regular practice and team meetings</li>
+                        <li>Be respectful and courteous to other players and teams</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-gradient-to-r from-cyan-500 to-blue-500 mt-8 p-4 text-white">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2023 Destined 4 Greatness. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToRules() {
+            const leagueRequirementsSection = document.getElementById('rules');
+            leagueRequirementsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>
