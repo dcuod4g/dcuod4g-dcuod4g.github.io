@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-4">Report Form</h1>
+        <form id="reportForm">
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Your Name:</span>
+                </label>
+                <input type="text" name="reporterName" placeholder="Your Name" class="input input-bordered" required />
+            </div>
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Player Involved:</span>
+                </label>
+                <input type="text" name="playerInvolved" placeholder="Player Involved" class="input input-bordered" required />
+            </div>
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Description of Incident:</span>
+                </label>
+                <textarea name="incidentDescription" placeholder="What happened?" class="textarea textarea-bordered" required></textarea>
+            </div>
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Proof Available:</span>
+                </label>
+                <select name="proofAvailable" class="select select-bordered" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-control mt-6">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+
+        <script>
+            const form = document.getElementById('reportForm');
+            const discordWebhookUrl = 'https://discord.com/api/webhooks/1066803633900222514/4q8M3x_i8h6f-P7T559M-h1wW2x4X-aW1c3kY1-b_O8a9k8-F8gC6pK'; // Replace with your Discord webhook URL
+
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault(); 
+                const formData = new FormData(form);
+                const data = {};
+                formData.forEach((value, key) => {
+                    data[key] = value;
+                });
+            
+                try {
+                    const response = await fetch(discordWebhookUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    });
+                    if (response.ok) {
+                        alert('Report submitted successfully!');
+                        form.reset();
+                    } else {
+                        alert('Error submitting report.');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Error submitting report.');
+                }
+
+
+            });
+        </script>
+    </div>
+</body>
+</html>

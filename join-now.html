@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Now</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <main class="container mx-auto p-4">
+        <section class="join-now mt-8">
+            <h2 class="text-3xl font-bold mb-4">Join Our League Now!</h2>
+            <form id="join-form">
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">Name</span>
+                    </label>
+                    <input type="text" id="name" class="input input-bordered" required />
+                </div>
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">Platform</span>
+                    </label>
+                    <select id="platform" class="select select-bordered" required>
+                        <option value="">Select Platform</option>
+                        <option value="Playstation">Playstation</option>
+                        <option value="PC">PC</option>
+                    </select>
+                </div>
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">CR</span>
+                    </label>
+                    <input type="number" id="cr" class="input input-bordered" required />
+                </div>
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">Skill Points</span>
+                    </label>
+                    <input type="number" id="skill-points" class="input input-bordered" required />
+                </div>
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">Comment</span>
+                    </label>
+                    <textarea id="comment" class="textarea textarea-bordered" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </section>
+    </main>
+    <script>
+        const form = document.getElementById('join-form');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const platform = document.getElementById('platform').value;
+            const cr = document.getElementById('cr').value;
+            const skillPoints = document.getElementById('skill-points').value;
+            const comment = document.getElementById('comment').value;
+            const data = {
+                name,
+                platform,
+                cr,
+                skillPoints,
+                comment,
+            };
+            const response = await fetch('https://discord.com/api/webhooks/your-webhook-id/your-webhook-token', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    content: `New application from ${name} on ${platform} with CR ${cr} and ${skillPoints} skill points. Comment: ${comment}`,
+                }),
+            });
+            if (response.ok) {
+                alert('Application submitted successfully!');
+                form.reset();
+            } else {
+                alert('Error submitting application. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
