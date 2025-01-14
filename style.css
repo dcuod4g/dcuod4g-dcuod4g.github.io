@@ -1,0 +1,20 @@
+@media only screen and (max-width: 600px) {
+  .navbar-center, .navbar-end, .leader-card {
+    flex-basis: 100%;
+    max-width: 100%;
+    margin: 0 auto 1rem;
+  }
+  
+  .navbar-center ul {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .leader-card img {
+    height: 200px;
+  }
+  
+  .info-box p, .hero-content p {
+    font-size: 0.875rem;
+  }
+}
