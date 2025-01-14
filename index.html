@@ -15,16 +15,12 @@
                 <div class="navbar-start">
                     <a class="btn btn-ghost normal-case text-xl" href="#">Destined 4 Greatness</a>
                 </div>
-                <div class="navbar-center hidden lg:flex">
+                 <!--<div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal px-1">
                         <li><a href="./feat-hunting-form.html">Feat Hunting</a></li>
                         <li><a href="./report-form.html">Report</a></li>
-                        <li><a href="">Roles</a></li>
-                        <li><a href="">Artifact</a></li>
-                        <li><a href="">Agument</a></li>
-                        <li><a href="">Feat</a></li>
                     </ul>
-                </div>
+                </div> -->
                 <div class="navbar-end">
                     <button class="btn btn-primary" onclick="window.location.href='./join-now.html'">Join Us</button>
                 </div>
@@ -38,7 +34,12 @@
                 <div>
                     <h1 class="text-5xl font-bold">Welcome to Our League!</h1>
                     <p class="py-6">Discover the thrill of competitive gaming and make new friends in our vibrant gaming community.</p>
-                    <button class="btn btn-primary" onclick="scrollToRules()">RULES</button> 
+                    <button class="btn btn-primary" onclick="scrollToRules()">RULES</button>
+                    <button class="btn btn-primary" onclick="scrollToFAQ()">ROLES</button>
+                    <button class="btn btn-primary" onclick="scrollToContact()">ARTIFACTS</button>
+                    <button class="btn btn-primary" onclick="scrollToAbout()">AUGMENTS</button>
+                    <button class="btn btn-primary" onclick="scrollToSponsors()">XP CALC</button>
+                    <button class="btn btn-primary" onclick="scrollToPartners()">FEATS</button>
                 </div>
             </div>
         </section>
@@ -89,7 +90,7 @@
                     <p class="text-lg">We do have members willing to help with feats but having mic is a must to avoid unnecessary typing doing runs</p>
                     <p class="text-lg">Please mail MrsHex all toon the toon you have in the leage.</p>
                 </div>
-                <div class="info-box p-4 bg-base-100 rounded-lg shadow-2xl w-1/2" id="rules"> 
+                <div class="info-box p-4 bg-base-100 rounded-lg shadow-2xl w-1/2" id="rules">
                     <h2 class="text-3xl font-bold mb-4">Rules</h2>
                     <p class="text-lg">To join our league, you must meet the following requirements:</p>
                     <ul class="text-lg">
@@ -99,6 +100,26 @@
                         <li>Be willing to commit to regular practice and team meetings</li>
                         <li>Be respectful and courteous to other players and teams</li>
                     </ul>
+                </div>
+                <div class="info-box p-4 bg-base-100 rounded-lg shadow-2xl w-1/2" id="faq">
+                    <h2 class="text-3xl font-bold mb-4">Roles</h2>
+                    <p class="text-lg">comming soon....</p>
+                </div>
+                <div class="info-box p-4 bg-base-100 rounded-lg shadow-2xl w-1/2" id="contact">
+                    <h2 class="text-3xl font-bold mb-4">Artifacts</h2>
+                    <p class="text-lg">Gcomming soon....s</p>
+                </div>
+                <div class="info-box p-4 bg-base-100 rounded-lg shadow-2xl w-1/2" id="about">
+                    <h2 class="text-3xl font-bold mb-4">Augments</h2>
+                    <p class="text-lg">comming soon....</p>
+                </div>
+                <div class="info-box p-4 bg-base-100 rounded-lg shadow-2xl w-1/2" id="sponsors">
+                    <h2 class="text-3xl font-bold mb-4">XP Calculator</h2>
+                    <p class="text-lg">comming soon....</p>
+                </div>
+                <div class="info-box p-4 bg-base-100 rounded-lg shadow-2xl w-1/2" id="partners">
+                    <h2 class="text-3xl font-bold mb-4">Feats</h2>
+                    <p class="text-lg">comming soon....</p>
                 </div>
             </div>
         </section>
@@ -113,6 +134,26 @@
         function scrollToRules() {
             const leagueRequirementsSection = document.getElementById('rules');
             leagueRequirementsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        function scrollToFAQ() {
+            const faqSection = document.getElementById('faq');
+            faqSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        function scrollToContact() {
+            const contactSection = document.getElementById('contact');
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        function scrollToAbout() {
+            const aboutSection = document.getElementById('about');
+            aboutSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        function scrollToSponsors() {
+            const sponsorsSection = document.getElementById('sponsors');
+            sponsorsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        function scrollToPartners() {
+            const partnersSection = document.getElementById('partners');
+            partnersSection.scrollIntoView({ behavior: 'smooth' });
         }
     </script>
 </body>
