@@ -61,9 +61,9 @@
                     </div>
                 </div>
                 <div class="leader-card">
-                    <img alt="Leader 4" class="w-full h-64 object-cover rounded-lg shadow-2xl" src="./photos/arzek.jpg">
+                    <img alt="Leader 4" class="w-full h-64 object-cover rounded-lg shadow-2xl" src="./photos/whispers.jpg">
                     <div class="info-box p-4 bg-base-100 rounded-lg shadow-2xl">
-                        <h3 class="text-xl font-bold">Arzek</h3>
+                        <h3 class="text-xl font-bold">Whisperz</h3>
                         <p class="text-lg">Co-Leader</p>
                     </div>
                 </div>
@@ -80,11 +80,122 @@
                 </div>
                 <div id="roles" class="info-box p-4 bg-base-100 rounded-lg shadow-2xl w-1/2">
                     <h2 class="text-3xl font-bold mb-4">Roles</h2>
-                    <p class="text-lg">comming soon....</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <div class="role-card">
+                            <img alt="Role 1" class="w-full h-64 object-cover rounded-lg shadow-2xl" src="./photos/tank.avif">
+                            <div class="info-box p-4 bg-base-100 rounded-lg shadow-2xl">
+                                <h3 class="text-xl font-bold">Tank</h3>
+                                <p class="text-lg">The tank is the team's defensive specialist, responsible for absorbing damage and protecting their allies.</p>
+                            </div>
+                        </div>
+                        <div class="role-card">
+                            <img alt="Role 2" class="w-full h-64 object-cover rounded-lg shadow-2xl" src="./photos/healer.avif">
+                            <div class="info-box p-4 bg-base-100 rounded-lg shadow-2xl">
+                                <h3 class="text-xl font-bold">Healer</h3>
+                                <p class="text-lg">The healer is the team's medical specialist, responsible for restoring health to their allies and keeping them alive.</p>
+                            </div>
+                        </div>
+                        <div class="role-card">
+                            <img alt="Role 3" class="w-full h-64 object-cover rounded-lg shadow-2xl" src="./photos/dps.avif">
+                            <div class="info-box p-4 bg-base-100 rounded-lg shadow-2xl">
+                                <h3 class="text-xl font-bold">DPS</h3>
+                                <p class="text-lg">The DPS (damage per second) specialist is the team's primary damage dealer, responsible for taking down enemies quickly and efficiently.</p>
+                            </div>
+                        </div>
+                        <div class="role-card">
+                            <img alt="Role 4" class="w-full h-64 object-cover rounded-lg shadow-2xl" src="./photos/troller.avif">
+                            <div class="info-box p-4 bg-base-100 rounded-lg shadow-2xl">
+                                <h3 class="text-xl font-bold">Controller</h3>
+                                <p class="text-lg">The controller is the team's crowd control specialist, responsible for managing enemy movements and abilities.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div id="artifacts" class="info-box p-4 bg-base-100 rounded-lg shadow-2xl w-1/2">
-                    <h2 class="text-3xl font-bold mb-4">Artifacts</h2>
-                    <p class="text-lg">comming soon....</p>
+                    <h2 class="text-3xl font-bold mb-4">Artifact Guide</h2>
+                    <p class="text-lg">
+                        <h3 class="text-1xl font-bold mb-2">Artifact Rank Experience</h3>
+                        <label for="rank">Choose a rank:</label>
+                        <select id="rank">
+                            <!-- Options for ranks 20 to 200 -->
+                            <option value="20">Rank 20</option>
+                            <option value="40">Rank 40</option>
+                            <option value="60">Rank 60</option>
+                            <option value="80">Rank 80</option>
+                            <option value="100">Rank 100</option>
+                            <option value="120">Rank 120</option>
+                            <option value="140">Rank 140</option>
+                            <option value="160">Rank 160</option>
+                            <option value="180">Rank 180</option>
+                            <option value="200">Rank 200</option>
+                            <!-- Add more ranks as needed -->
+                        </select>
+                        <br>
+                        <div id="xpCatalyst"></div>
+                    
+                        <script>
+                            const rankSelect = document.getElementById('rank');
+                            const xpCatalystDiv = document.getElementById('xpCatalyst');
+                    
+                            rankSelect.addEventListener('change', () => {
+                                const rank = parseInt(rankSelect.value);
+                                let xp, catalyst;
+                    
+                                switch (rank) {
+                                    case 20:
+                                        xp = 2662;
+                                        catalyst = '2 Dionesium';
+                                        break;
+                                    case 40:
+                                        xp = 7984;
+                                        catalyst = '4 Dionesium 1 Quantum Field Energy';
+                                        break;
+                                    case 60:
+                                        xp = 18629;
+                                        catalyst = '7 Dionesium 3 Quantum Field Energy 1 Paradox Energy';
+                                        break;
+                                    case 80:
+                                        xp = 39920;
+                                        catalyst = '11 Dionesium 6 Quantum Field Energy 3 Paradox Energy';
+                                        break;
+                                    case 100:
+                                        xp = 82499;
+                                        catalyst = '16 Dionesium 10 Quantum Field Energy 6 Paradox Energy';
+                                        break;
+                                    case 120:
+                                        xp = 167659;
+                                        catalyst = '22 Dionesium 15 Quantum Field Energy 10 Paradox Energy';
+                                        break;
+                                    case 140:
+                                        xp = 337979;
+                                        catalyst = '29 Dionesium 21 Quantum Field Energy 15 Paradox Energy';
+                                        break;
+                                    case 160:
+                                        xp = 678722;
+                                        catalyst = '37 Dionesium 28 Quantum Field Energy 21 Paradox Energy';
+                                        break;
+                                    case 180:
+                                        xp = 1178722;
+                                        catalyst = '46 Dionesium 36 Quantum Field Energy 28 Paradox Energy';
+                                        break;
+                                    case 200:
+                                        xp = 1678722;
+                                        catalyst = '56 Dionesium 45 Quantum Field Energy 36 Paradox Energy';
+                                        break;
+                                    default:
+                                        xp = 'Invalid rank';
+                                        catalyst = 'Invalid rank';
+                                }
+                    
+                                xpCatalystDiv.innerHTML = `
+                                    <h3>Artifact Rank ${rank}</h3>
+                                    <p>XP needed: ${xp}</p>
+                                    <p>Catalyst needed: ${catalyst}</p>
+                                `;
+                            });
+                        </script>
+
+                    </p>
                 </div>
                 <div id="augments" class="info-box p-4 bg-base-100 rounded-lg shadow-2xl w-1/2">
                     <h2 class="text-3xl font-bold mb-4">Augments</h2>
